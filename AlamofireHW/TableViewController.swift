@@ -20,16 +20,6 @@ class TableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-    func fetchForCards() {
-        let request = AF.request("https://api.magicthegathering.io/v1/cards")
-        request.responseDecodable(of: Cards.self) { (data) in
-            guard let car = data.value else { return }
-            let cards = car.cards
-            self.newCard = cards
-            self.tableView.reloadData()
-        }
-    }
 }
 
 extension TableViewController: UITableViewDataSource, UITableViewDelegate {
