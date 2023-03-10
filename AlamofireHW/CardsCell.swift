@@ -37,4 +37,60 @@ class CardsSell: UITableViewCell {
         artist.translatesAutoresizingMaskIntoConstraints = false
         return artist
     }()
+    
+    var card: Card? {
+        didSet {
+            name.text = card?.name
+            rarity.text = card?.rarity
+            setName.text = card?.setName
+            artist.text = card?.artist
+        }
+    }
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setupHierarchy()
+        setupLayout()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("Error")
+    }
+    
+    private func setupHierarchy() {
+        addSubview(name)
+        addSubview(rarity)
+        addSubview(setName)
+        addSubview(artist)
+    }
+    
+    private func setupLayout() {
+        NSLayoutConstraint.activate([
+            name.topAnchor.constraint(equalTo: topAnchor, constant: -30),
+            name.rightAnchor.constraint(equalTo: rarity.rightAnchor, constant: 190),
+            name.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 50),
+            name.leftAnchor.constraint(equalTo: leftAnchor, constant: 10)
+        ])
+        
+        NSLayoutConstraint.activate([
+            artist.topAnchor.constraint(equalTo: name.topAnchor),
+            artist.rightAnchor.constraint(equalTo: setName.rightAnchor, constant: 190),
+            artist.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 15),
+            artist.leftAnchor.constraint(equalTo: leftAnchor, constant: 10)
+        ])
+        
+        NSLayoutConstraint.activate([
+            rarity.topAnchor.constraint(equalTo: topAnchor, constant: -30),
+            rarity.rightAnchor.constraint(equalTo: rightAnchor, constant: 10),
+            rarity.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 50),
+            rarity.leftAnchor.constraint(equalTo: name.leftAnchor, constant: 190)
+        ])
+        
+        NSLayoutConstraint.activate([
+            setName.topAnchor.constraint(equalTo: rarity.topAnchor),
+            setName.rightAnchor.constraint(equalTo: rightAnchor, constant: 10),
+            setName.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 15),
+            setName.leftAnchor.constraint(equalTo: artist.leftAnchor, constant: 190)
+        ])
+    }
 }
