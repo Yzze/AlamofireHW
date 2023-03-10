@@ -67,6 +67,9 @@ extension TableViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        tableView.deselectRow(at: indexPath, animated: true)
+        let detailView = DetailViewController()
+        detailView.cardCharacteristics = newCard[indexPath.row]
+        navigationController?.pushViewController(detailView, animated: true)
     }
 }
