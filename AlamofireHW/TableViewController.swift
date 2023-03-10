@@ -14,6 +14,7 @@ class TableViewController: UIViewController {
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .insetGrouped)
+        tableView.register(CardsSell.self, forCellReuseIdentifier: CardsSell.indetifier)
         tableView.dataSource = self
         tableView.delegate = self
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -22,6 +23,11 @@ class TableViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "✨ Magic cards ✨"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        fetchForCards()
+        setupHierarchy()
+        setupLayout()
     }
     
     func fetchForCards() {
@@ -54,7 +60,10 @@ extension TableViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+        guard let cardsCell = tableView.dequeueReusableCell(withIdentifier: CardsSell.indetifier, for: indexPath) as? CardsSell else {return UITableViewCell()}
+        cardsCell.card = self.newCard[indexPath.row]
+        cardsCell.accessoryType = .detailButton
+        return cardsCell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
