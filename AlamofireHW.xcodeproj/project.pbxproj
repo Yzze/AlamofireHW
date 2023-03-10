@@ -12,6 +12,7 @@
 		2C32404529BB6252003AE8DB /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C32404429BB6252003AE8DB /* TableViewController.swift */; };
 		2C32404A29BB6253003AE8DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C32404929BB6253003AE8DB /* Assets.xcassets */; };
 		2C32405829BB660D003AE8DB /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C32405729BB660D003AE8DB /* Model.swift */; };
+		2C32405A29BB6AEA003AE8DB /* CardsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C32405929BB6AEA003AE8DB /* CardsCell.swift */; };
 		6C57638AA8595873871989B8 /* libPods-AlamofireHW.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AF6A5265B3028322B4067DA /* libPods-AlamofireHW.a */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +25,7 @@
 		2C32404929BB6253003AE8DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C32404E29BB6253003AE8DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C32405729BB660D003AE8DB /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		2C32405929BB6AEA003AE8DB /* CardsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsCell.swift; sourceTree = "<group>"; };
 		3AF6A5265B3028322B4067DA /* libPods-AlamofireHW.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AlamofireHW.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D4D9B3504560D6709126126 /* Pods-AlamofireHW.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlamofireHW.debug.xcconfig"; path = "Target Support Files/Pods-AlamofireHW/Pods-AlamofireHW.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,6 +74,7 @@
 			children = (
 				2C32404429BB6252003AE8DB /* TableViewController.swift */,
 				2C32405729BB660D003AE8DB /* Model.swift */,
+				2C32405929BB6AEA003AE8DB /* CardsCell.swift */,
 				2C32405529BB62E9003AE8DB /* Sources */,
 				2C32405629BB62F7003AE8DB /* Resources */,
 			);
@@ -211,6 +214,7 @@
 				2C32404129BB6252003AE8DB /* AppDelegate.swift in Sources */,
 				2C32404329BB6252003AE8DB /* SceneDelegate.swift in Sources */,
 				2C32405829BB660D003AE8DB /* Model.swift in Sources */,
+				2C32405A29BB6AEA003AE8DB /* CardsCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
