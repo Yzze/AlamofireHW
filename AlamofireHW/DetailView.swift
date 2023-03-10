@@ -41,4 +41,48 @@ class DetailViewController: UIViewController {
         text.translatesAutoresizingMaskIntoConstraints = false
         return text
     }()
+    
+    var cardCharacteristics: Card? {
+        didSet {
+            self.name.text = cardCharacteristics?.name
+            self.artist.text = cardCharacteristics?.artist
+            self.setName.text = cardCharacteristics?.setName
+            self.text.text = cardCharacteristics?.text
+        }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .white
+        setupHierarchy()
+        setupLayout()
+    }
+    
+    private func setupHierarchy() {
+        view.addSubview(name)
+        view.addSubview(artist)
+        view.addSubview(setName)
+        view.addSubview(text)
+    }
+    
+    private func setupLayout() {
+        NSLayoutConstraint.activate([
+            name.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            name.topAnchor.constraint(equalTo: view.topAnchor, constant: -450),
+            name.bottomAnchor.constraint(equalTo: artist.bottomAnchor, constant: 20),
+            
+            artist.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            artist.topAnchor.constraint(equalTo: name.topAnchor, constant: 100),
+            artist.bottomAnchor.constraint(equalTo: setName.bottomAnchor, constant: 20),
+            
+            setName.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            setName.topAnchor.constraint(equalTo: artist.topAnchor, constant: 100),
+            setName.bottomAnchor.constraint(equalTo: text.bottomAnchor, constant: 20),
+            
+            text.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            text.widthAnchor.constraint(equalToConstant: 350),
+            text.topAnchor.constraint(equalTo: setName.topAnchor, constant: 150),
+            text.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 250),
+        ])
+    }
 }
